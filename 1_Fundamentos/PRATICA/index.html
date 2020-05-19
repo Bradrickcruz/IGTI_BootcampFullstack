@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Esquema de cores RGB</title>
+  </head>
+  <body>
+    <div id="content">
+      <h1>Esquema de cores em RGB</h1>
+
+      <table>
+        <tr>
+          <td><span>(R) Vermelho:</span></td>
+          <td>
+            <input
+              type="range"
+              value="130"
+              min="0"
+              max="255"
+              step="1"
+              name="red"
+              id="redRange"
+            />
+          </td>
+          <td><input type="text" disabled value="valor" id="redInput" /></td>
+        </tr>
+        <tr>
+          <td><span>(G) Verde:</span></td>
+          <td>
+            <input
+              type="range"
+              value="130"
+              min="0"
+              max="255"
+              step="1"
+              name="green"
+              id="greenRange"
+            />
+          </td>
+          <td><input type="text" disabled value="valor" id="greenInput" /></td>
+        </tr>
+        <tr>
+          <td><span>(B) Azul:</span></td>
+          <td>
+            <input
+              type="range"
+              value="130"
+              min="0"
+              max="255"
+              step="1"
+              name="blue"
+              id="blueRange"
+            />
+          </td>
+          <td><input type="text" disabled value="valor" id="blueInput" /></td>
+        </tr>
+      </table>
+    </div>
+    <div id="colorfulSquare"></div>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
