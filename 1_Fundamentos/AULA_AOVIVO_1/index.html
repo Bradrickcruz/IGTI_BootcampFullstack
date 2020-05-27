@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Rádio Podcast</title>
+  </head>
+  <body>
+    <div id="content">
+      <h1>Rádio Podcast</h1>
+      <div>
+        <p>Ajuste sua frequência favorita</p>
+      </div>
+
+      <div>
+        <input id="inputFrequency" type="text" disabled value="97.7" />
+      </div>
+
+      <div>
+        <input
+          id="inputRange"
+          type="range"
+          min="87.5"
+          max="108"
+          step="0.1"
+          value="97.7"
+        />
+      </div>
+
+      <div id="podcastInfo"></div>
+      <div>
+        <footer>Feito por Bryan Cruz</footer>
+      </div>
+    </div>
+
+    <script src="./js/podcasts.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
