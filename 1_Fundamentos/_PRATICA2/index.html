@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Reseta o CSS e coloca o tema MATERIALIZE minificado -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>WORLD FAVORITE COUNTRIES</title>
+  </head>
+  <body>
+    <div id="header">
+      <header>
+        <h1>World Country List</h1>
+      </header>
+    </div>
+
+    <div id="content">
+      <div class="column" id="allCountries">
+        <div class="headerList">
+          <h2>All Countries (<span id="countAllCountries"></span>)</h2>
+          <p>Total population: <span id="totalAllPopulation"></span></p>
+        </div>
+
+        <div class="contentList">
+          <div class="countryDiv">
+            <button class="addFavoriteButton"></button>
+            <img src="" alt="countryFlag" />
+            <div class="countryInfo">
+              <p class="countryName"></p>
+              <p class="countryPopulation"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="column" id="favCountries">
+        <div class="headerList">
+          <h2>Favorite Countries (<span id="countFavCountries"></span>)</h2>
+          <p>Total population: <span id="totalFavPopulation"></span></p>
+        </div>
+
+        <div class="contentList">
+          <div class="countryDiv">
+            <button class="favoriteButton"></button>
+            <img src="" alt="countryFlag" />
+            <div class="countryInfo">
+              <p class="countryName"></p>
+              <p class="countryPopulation"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer">
+      <footer>Desenvolvido por Bryan Cruz.</footer>
+    </div>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
