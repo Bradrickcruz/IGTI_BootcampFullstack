@@ -1,0 +1,71 @@
+body,
+.info,
+.statsInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+#search,
+#content,
+.userInfo {
+  display: flex;
+}
+
+#search {
+  align-items: center;
+}
+
+body {
+  align-items: center;
+  justify-content: center;
+}
+#header {
+  margin-bottom: 50px;
+}
+
+div#header span {
+  color: rgb(29, 95, 29);
+  font-weight: bold;
+  padding: 2px 10px;
+}
+
+#inputSearch {
+  width: 65vw;
+  padding: 2px 7px;
+  margin-bottom: 2px;
+}
+
+#inputSearchSubmit {
+  margin-left: 25px;
+  padding: 3px;
+  height: 30px;
+}
+
+#content #usersFoundedList,
+#content #usersFoundedStats {
+  border: 1px solid grey;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+#usersFoundedList {
+  width: 450px;
+}
+
+#content #usersFoundedStats {
+  margin-left: 25px;
+  width: 250px;
+  height: ;
+}
+
+#content h2 {
+  margin: 10px;
+}
+
+.info {
+  margin-left: 15px;
+}
+
+#footer {
+  margin-top: 30px;
+}

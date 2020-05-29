@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>User Search</title>
+  </head>
+  <body>
+    <div id="header">
+      <h1>User Search</h1>
+      <span>busca</span>
+      <div id="search">
+        <input type="text" id="inputSearch" />
+        <button type="submit" id="inputSearchSubmit">BUSCAR</button>
+      </div>
+    </div>
+
+    <div id="content">
+      <div id="usersFoundedList">
+        <h2>33 users founded</h2>
+        <ul class="userList">
+          <li class="userInfo">
+            <img src="#" alt="profile User img" />
+            <div class="info">
+              <span class="userName">name</span>
+              <span class="userAge">age</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div id="usersFoundedStats">
+        <h2>Statistics</h2>
+        <div class="statsInfo">
+          <span class="maleUsersFoundedCount">male count: 12</span>
+          <span class="femaleUsersFoundedCount">female count: 123</span>
+          <span class="sumAgesFounded">sum of ages founded: 23414</span>
+          <span class="avgAgesFounded">average os ages founded: 23</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer">
+      <footer>Developed by Bryan Cruz</footer>
+    </div>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>
