@@ -1,31 +1,71 @@
-/**regras do programa
-
-- elemento de aguarde quando carregando os dados
-	o input deve estar bloqueado durante esse processo
-
-- se no input houver mais de um caracter, o botao de busca se habilita
-- o usuario pode buscar tanto pelo botao quanto apertando enter
- */
-
-let userData = null;
-window.addEventListener('load', () => {
-  console.log('loaded');
-  fetchingData();
-});
-
 async function fetchingData() {
-  userData = await fetch(
+  usersData = await fetch(
     'https://randomuser.me/api/?seed=javascript&results=100&nat=BR&noinfo'
   );
-  userData = await userData.json();
-  userData = [...userData.results];
-  userData = userData.map((user) => {
+  usersData = await usersData.json();
+  usersData = [...usersData.results];
+  usersData = usersData.map((user) => {
     return {
-      name: user.name,
+      name: `${user.name.first} ${user.name.last}`,
       gender: user.gender,
       age: user.dob.age,
       thumb: user.picture.thumbnail,
     };
   });
-  console.log(userData);
+  // console.log(usersData);
+  return usersData;
+}
+
+let UsersFetched = fetchingData();
+let usersFoundedList = [];
+
+let globalInputSearch = null;
+let globalInputSearchSubmit = null;
+let globalDivUserFounded = null;
+let globalDivUserFoundedStats = null;
+
+globalInputSearch = document.querySelector('#inputSearch');
+globalInputSearchSubmit = document.querySelector('#inputSearchSubmit');
+globalDivUserFounded = document.querySelector('#userFoundedList');
+globalDivUserFoundedStats = document.querySelector('#usersFoundedStats');
+
+globalInputSearch.addEventListener('keyup', (event) => {
+  // console.log(event);
+  if (event.target.value.length >= 1) {
+    globalInputSearchSubmit.disabled = false;
+    if (event.key === 'Enter') {
+      searchUsers();
+    }
+    return;
+  }
+  globalInputSearchSubmit.disabled = true;
+});
+globalInputSearchSubmit.addEventListener('click', searchUsers);
+
+render();
+
+function render() {
+  function updateUserFoundedList() {
+    if (usersFoundedList) {
+      // finding some user
+      return;
+    }
+    // else
+  }
+  function updateUserFoundedStats() {
+    if (usersFoundedList) {
+      // finding some user
+      return;
+    }
+    // else
+  }
+
+  updateUserFoundedList();
+  updateUserFoundedStats();
+}
+
+function searchUsers() {
+  console.log('Submiting...');
+  let searchFor = globalInputSearch.value;
+  console.log(searchFor);
 }

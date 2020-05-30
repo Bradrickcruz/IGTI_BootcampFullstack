@@ -55,7 +55,7 @@ div#header span {
 #content #usersFoundedStats {
   margin-left: 25px;
   width: 250px;
-  height: ;
+  height: auto;
 }
 
 #content h2 {
