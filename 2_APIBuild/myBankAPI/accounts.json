@@ -1,7 +1,1 @@
-{
-  "nextID": 3,
-  "accounts": [
-    { "id": 1, "name": "Gabriela Campos Ribeiro Cruz", "balance": 100 },
-    { "id": 2, "name": "Bryan Henrique Cruz Souza", "balance": 100 }
-  ]
-}
+{"nextID":9,"accounts":[{"iCampos Ribeiro Cruz","balance":100},{"id":2,"name":"Bryan Henrique Cruz Souza","balance":100},{"id":3,"name":"Anthony Cruz Vernetti","balance":100},{"id":4,"name":"Melany Cruz Andriotti","balance":100},{"id":5,"name":"Hector Cruz Andriotti","balance":100},{"id":6,"name":"Johnny Cruz Andriotti","balance":100},{"id":7,"name":"Karla Salgueiro Cruz Andriotti","balance":100},{"id":8,"balance":100}]}

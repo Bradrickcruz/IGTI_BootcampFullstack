@@ -10,19 +10,26 @@ app.post('/account', (req, res) => {
   account = req.body;
   fs.readFile('./accounts.json', 'UTF-8', (err, data) => {
     if (!err) {
-      let json = JSON.parse(data);
-      account = { id: json.nextID, ...account };
-      console.log(account);
-      json.nextID += 1;
-      json.accounts.push(account);
+      try {
+        let json = JSON.parse(data);
+        account = { id: json.nextID, ...account };
+        json.nextID += 1;
+        json.accounts.push(account);
 
-      fs.writeFile('./accounts.json', JSON.stringify(json), (err) => {
-        return err;
-      });
+        fs.writeFile('./accounts.json', JSON.stringify(json), (err) => {
+          !err
+            ? res.send(
+                `account[${account.id}] of ${account.name} created with R$${account.balance},00`
+              )
+            : res.end();
+        });
+      } catch (err) {
+        res.status(400).send({ error: err.message });
+      }
+    } else {
+      res.status(400).send({ error: err.message });
     }
   });
-
-  res.send(`account of ${req.body.name} created with R$${req.body.balance},00`);
 });
 
 app.listen(port, () => {
@@ -33,8 +40,6 @@ app.listen(port, () => {
         fs.writeFile('./accounts.json', JSON.stringify(initialJSON), (err) => {
           return err;
         });
-      } else {
-        console.log(data);
       }
     });
   } catch (err) {
