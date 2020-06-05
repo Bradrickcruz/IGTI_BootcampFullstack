@@ -1,6 +1,11 @@
-app.post('/new', (req, res) => {
+import express from 'express';
+import { readFile, writeFile } from 'fs';
+
+const router = express.Router();
+
+router.post('/new', (req, res) => {
   let account = req.body;
-  fs.readFile(jsonAccounts, 'UTF-8', (err, data) => {
+  readFile(jsonAccounts, 'UTF-8', (err, data) => {
     if (!err) {
       try {
         let json = JSON.parse(data);
@@ -8,7 +13,7 @@ app.post('/new', (req, res) => {
         json.nextID += 1;
         json.accounts.push(account);
 
-        fs.writeFile(jsonAccounts, JSON.stringify(json), (err) => {
+        writeFile(jsonAccounts, JSON.stringify(json), (err) => {
           !err
             ? res.send(
                 `account[${account.id}] of ${account.name} created with R$${account.balance},00`
@@ -24,8 +29,8 @@ app.post('/new', (req, res) => {
   });
 });
 
-app.get('/all', (_req, res) => {
-  fs.readFile(jsonAccounts, 'utf-8', (err, data) => {
+router.get('/all', (_req, res) => {
+  readFile(jsonAccounts, 'utf-8', (err, data) => {
     if (!err) {
       data = JSON.parse(data);
       delete data.nextID;
@@ -35,3 +40,20 @@ app.get('/all', (_req, res) => {
     res.send(err);
   });
 });
+
+router.get('/:id', (req, res) => {
+  readFile(jsonAccounts, 'utf-8', (err, data) => {
+    if (!err) {
+      data = JSON.parse(data);
+      let selectedData = data.accounts.find(
+        (account) => account.id == req.params.id
+      );
+
+      res.send(selectedData);
+      return;
+    }
+    res.send(err);
+  });
+});
+
+export default router;

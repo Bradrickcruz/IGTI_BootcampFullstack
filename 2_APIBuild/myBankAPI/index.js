@@ -1,6 +1,7 @@
 // o arquivo "nodemon.json" Ignora arquivos para reiniciar o nodemon
 import express from 'express';
 import fs from 'fs';
+import accountRouter from './routes/account.js';
 
 // const express = require('express');
 // const fs = require('fs');
@@ -8,9 +9,10 @@ import fs from 'fs';
 const app = express();
 const port = 3000;
 
-const jsonAccounts = './accounts.json';
+global.jsonAccounts = './accounts.json'; // global pode ser acessado de qualquer JS do projeto
 
 app.use(express.json()); // permite receber requisições com JSON
+app.use('/account', accountRouter);
 
 app.listen(port, () => {
   try {
