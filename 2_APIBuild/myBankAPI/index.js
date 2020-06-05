@@ -7,7 +7,7 @@ const port = 3000;
 
 app.use(express.json()); // permite receber requisições com JSON
 
-app.post('/account', (req, res) => {
+app.post('/new-account', (req, res) => {
   account = req.body;
   fs.readFile('./accounts.json', 'UTF-8', (err, data) => {
     if (!err) {
@@ -33,11 +33,12 @@ app.post('/account', (req, res) => {
   });
 });
 
-app.get('/accounts', (req, res) => {
+app.get('/accounts', (_req, res) => {
   fs.readFile('./accounts.json', 'utf-8', (err, data) => {
     if (!err) {
       data = JSON.parse(data);
-      res.send(data.accounts);
+      delete data.nextID;
+      res.send(data);
     }
     res.send(err);
   });
@@ -45,7 +46,7 @@ app.get('/accounts', (req, res) => {
 
 app.listen(port, () => {
   try {
-    fs.readFile('./accounts.json', 'UTF-8', (err, data) => {
+    fs.readFile('./accounts.json', 'UTF-8', (err, _data) => {
       if (err) {
         const initialJSON = { nextID: 1, accounts: [] };
         fs.writeFile('./accounts.json', JSON.stringify(initialJSON), (err) => {
