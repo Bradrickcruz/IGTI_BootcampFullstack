@@ -1,3 +1,4 @@
+// o arquivo "nodemon.json" Ignora arquivos para reiniciar o nodemon
 const express = require('express');
 const fs = require('fs');
 
@@ -29,6 +30,16 @@ app.post('/account', (req, res) => {
     } else {
       res.status(400).send({ error: err.message });
     }
+  });
+});
+
+app.get('/accounts', (req, res) => {
+  fs.readFile('./accounts.json', 'utf-8', (err, data) => {
+    if (!err) {
+      data = JSON.parse(data);
+      res.send(data.accounts);
+    }
+    res.send(err);
   });
 });
 
