@@ -1,55 +1,23 @@
 // o arquivo "nodemon.json" Ignora arquivos para reiniciar o nodemon
-const express = require('express');
-const fs = require('fs');
+import express from 'express';
+import fs from 'fs';
+
+// const express = require('express');
+// const fs = require('fs');
 
 const app = express();
 const port = 3000;
 
+const jsonAccounts = './accounts.json';
+
 app.use(express.json()); // permite receber requisições com JSON
-
-app.post('/new-account', (req, res) => {
-  account = req.body;
-  fs.readFile('./accounts.json', 'UTF-8', (err, data) => {
-    if (!err) {
-      try {
-        let json = JSON.parse(data);
-        account = { id: json.nextID, ...account };
-        json.nextID += 1;
-        json.accounts.push(account);
-
-        fs.writeFile('./accounts.json', JSON.stringify(json), (err) => {
-          !err
-            ? res.send(
-                `account[${account.id}] of ${account.name} created with R$${account.balance},00`
-              )
-            : res.end();
-        });
-      } catch (err) {
-        res.status(400).send({ error: err.message });
-      }
-    } else {
-      res.status(400).send({ error: err.message });
-    }
-  });
-});
-
-app.get('/accounts', (_req, res) => {
-  fs.readFile('./accounts.json', 'utf-8', (err, data) => {
-    if (!err) {
-      data = JSON.parse(data);
-      delete data.nextID;
-      res.send(data);
-    }
-    res.send(err);
-  });
-});
 
 app.listen(port, () => {
   try {
-    fs.readFile('./accounts.json', 'UTF-8', (err, _data) => {
+    fs.readFile(jsonAccounts, 'UTF-8', (err, _data) => {
       if (err) {
         const initialJSON = { nextID: 1, accounts: [] };
-        fs.writeFile('./accounts.json', JSON.stringify(initialJSON), (err) => {
+        fs.writeFile(jsonAccounts, JSON.stringify(initialJSON), (err) => {
           return err;
         });
       }
