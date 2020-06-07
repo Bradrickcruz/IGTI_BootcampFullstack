@@ -1,0 +1,76 @@
+2020-06-07T12:47:59.322Z [mybankAPI] info: API Ativa
+2020-06-07T12:52:01.603Z [mybankAPI] info: API Ativa
+2020-06-07T12:52:11.669Z [mybankAPI] info: API Ativa
+2020-06-07T12:52:40.274Z [mybankAPI] info: API Ativa
+2020-06-07T12:52:49.913Z [mybankAPI] info: API Ativa
+2020-06-07T12:52:52.332Z [mybankAPI] info: API Ativa
+2020-06-07T12:52:54.307Z [mybankAPI] info: API Ativa
+2020-06-07T12:52:55.511Z [mybankAPI] info: API Ativa
+2020-06-07T12:53:01.326Z [mybankAPI] info: API Ativa
+2020-06-07T12:53:06.532Z [mybankAPI] info: API Ativa
+2020-06-07T12:53:22.571Z [mybankAPI] info: API Ativa
+2020-06-07T12:53:24.349Z [mybankAPI] info: API Ativa
+2020-06-07T12:53:25.893Z [mybankAPI] info: API Ativa
+2020-06-07T12:53:31.796Z [mybankAPI] info: API Ativa
+2020-06-07T12:53:34.633Z [mybankAPI] info: API Ativa
+2020-06-07T12:53:37.721Z [mybankAPI] info: API Ativa
+2020-06-07T12:53:40.970Z [mybankAPI] info: API Ativa
+2020-06-07T12:53:45.013Z [mybankAPI] info: API Ativa
+2020-06-07T12:53:47.607Z [mybankAPI] info: API Ativa
+2020-06-07T12:53:49.260Z [mybankAPI] info: API Ativa
+2020-06-07T12:53:51.999Z [mybankAPI] info: API Ativa
+2020-06-07T12:53:52.904Z [mybankAPI] info: API Ativa
+2020-06-07T12:53:56.903Z [mybankAPI] info: API Ativa
+2020-06-07T12:54:03.811Z [mybankAPI] info: API Ativa
+2020-06-07T12:54:04.857Z [mybankAPI] info: API Ativa
+2020-06-07T12:54:27.021Z [mybankAPI] info: API Ativa
+2020-06-07T12:54:56.461Z [mybankAPI] info: API Ativa
+2020-06-07T12:55:03.058Z [mybankAPI] info: API Ativa
+2020-06-07T12:55:04.384Z [mybankAPI] info: API Ativa
+2020-06-07T12:55:15.115Z [mybankAPI] info: API Ativa
+2020-06-07T12:55:19.120Z [mybankAPI] info: API Ativa
+2020-06-07T12:55:21.068Z [mybankAPI] info: API Ativa
+2020-06-07T12:55:22.438Z [mybankAPI] info: API Ativa
+2020-06-07T12:55:26.456Z [mybankAPI] info: API Ativa
+2020-06-07T12:55:28.509Z [mybankAPI] info: API Ativa
+2020-06-07T12:55:29.717Z [mybankAPI] info: API Ativa
+2020-06-07T12:55:44.575Z [mybankAPI] info: API Ativa
+2020-06-07T12:55:46.416Z [mybankAPI] info: API Ativa
+2020-06-07T12:55:56.427Z [mybankAPI] info: API Ativa
+2020-06-07T12:55:59.641Z [mybankAPI] info: API Ativa
+2020-06-07T12:56:03.219Z [mybankAPI] info: API Ativa
+2020-06-07T12:56:06.952Z [mybankAPI] info: API Ativa
+2020-06-07T12:56:09.895Z [mybankAPI] info: API Ativa
+2020-06-07T12:56:12.301Z [mybankAPI] info: API Ativa
+2020-06-07T13:06:22.197Z [mybankAPI] info: API Ativa
+2020-06-07T13:06:42.396Z [mybankAPI] info: GET /account/all
+2020-06-07T13:06:58.060Z [mybankAPI] info: POST /account - [object Object]
+2020-06-07T13:07:05.646Z [mybankAPI] info: GET /account/all
+2020-06-07T13:07:46.471Z [mybankAPI] info: API Ativa
+2020-06-07T13:07:47.165Z [mybankAPI] info: API Ativa
+2020-06-07T13:07:57.951Z [mybankAPI] info: POST /account - {"id":6,"name":"Luciane Cruz","balance":80}
+2020-06-07T13:11:19.300Z [mybankAPI] info: POST /account/deposit - undefined
+2020-06-07T13:12:56.964Z [mybankAPI] info: API Ativa
+2020-06-07T13:12:58.850Z [mybankAPI] info: API Ativa
+2020-06-07T13:13:11.166Z [mybankAPI] info: API Ativa
+2020-06-07T13:13:13.711Z [mybankAPI] info: API Ativa
+2020-06-07T13:13:22.563Z [mybankAPI] info: POST /account/transaction - {"id":1,"name":"Karla Cruz","balance":1200}
+2020-06-07T13:14:12.654Z [mybankAPI] info: API Ativa
+2020-06-07T13:14:14.910Z [mybankAPI] info: API Ativa
+2020-06-07T13:14:29.907Z [mybankAPI] info: API Ativa
+2020-06-07T13:14:38.978Z [mybankAPI] info: API Ativa
+2020-06-07T13:14:41.814Z [mybankAPI] info: API Ativa
+2020-06-07T13:14:44.964Z [mybankAPI] info: API Ativa
+2020-06-07T13:14:50.839Z [mybankAPI] info: API Ativa
+2020-06-07T13:14:53.780Z [mybankAPI] info: API Ativa
+2020-06-07T13:14:58.939Z [mybankAPI] info: API Ativa
+2020-06-07T13:15:04.742Z [mybankAPI] info: POST /account/transaction - {"id":1,"value":500}
+2020-06-07T13:15:37.380Z [mybankAPI] info: API Ativa
+2020-06-07T13:15:52.456Z [mybankAPI] info: API Ativa
+2020-06-07T13:15:58.031Z [mybankAPI] info: API Ativa
+2020-06-07T13:16:03.764Z [mybankAPI] info: API Ativa
+2020-06-07T13:16:10.345Z [mybankAPI] info: API Ativa
+2020-06-07T13:16:28.018Z [mybankAPI] info: API Ativa
+2020-06-07T13:16:37.052Z [mybankAPI] info: API Ativa
+2020-06-07T13:16:49.896Z [mybankAPI] info: POST /account/deposit - {"id":2,"value":200}
+2020-06-07T14:36:26.528Z [mybankAPI] info: API Ativa
