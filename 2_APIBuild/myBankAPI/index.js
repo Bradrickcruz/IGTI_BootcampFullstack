@@ -32,13 +32,15 @@ app.use('/account', accountRouter);
 app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerDoc));
 
 app.listen(port, async () => {
-  try {
-    await fs.readFile(jsonAccounts, 'UTF-8', () => {});
+  await fs.readFile(jsonAccounts, 'UTF-8')
+  .then(()=>{
     logger.info('API Ativa');
-  } catch (err) {
+  })
+  .catch( _err => {
     const initialJSON = { nextID: 1, accounts: [] };
-    await fs.writeFile(jsonAccounts, JSON.stringify(initialJSON), (err) => {
-      return { err: err.message };
+    await fs.writeFile(jsonAccounts, JSON.stringify(initialJSON))
+    .catch((err) => {
+      logger.error(err.message)
     });
-  }
-});
+  })
+})
