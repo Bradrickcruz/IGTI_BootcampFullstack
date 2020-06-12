@@ -60,8 +60,10 @@ app.get('/split', async (req, res) => {
           })
         });
         
-        res.status(200).send("arquivos JSON criados com sucesso.");
-      });
+        res.status(200).send({msg:"arquivos JSON criados com sucesso."});
+      }).catch(err=>{
+        res.status(400).send({err:err.message})
+      })
     })
     .catch((err) => res.send({ err: err.message }));
 });
@@ -85,47 +87,39 @@ app.get('/select/:uf', async (req, res) => {
     });
 });
 
+// imprime no console os 5 estados com mais cidades
 app.get('/top5', async (req, res) => {
-  /**TODO: parei aqui */
-  let stateList = [];
-  // lista as siglas dos estados
+  let estados;
   await fs
-    .readFile(statesPATH, 'utf-8')
+    .readFile(statesPATH, 'utf8')
     .then((data) => {
-      let statesDATA = JSON.parse(data);
-      stateList = statesDATA.map(({ Sigla }) => {
-        return { Sigla, countCities: 0 };
+      let data_JSON = JSON.parse(data);
+      estados = data_JSON.map(({ Sigla }) => {
+        return { sigla: Sigla, totalCities: 0 };
       });
-      res.send(stateList);
-      // conta as cidades de cada estado
-      stateList = stateList.forEach(async ({ Sigla, countCities }) => {
+    })
+    .then(() => {
+      console.log(estados);
+      estados.forEach(async (estado) => {
+        let path = `./states/${estado.sigla}.json`;
         await fs
-          .readFile(`./states/${Sigla}.json`, 'utf-8')
+          .readFile(path, 'utf-8')
           .then((data) => {
-            let count = JSON.parse(data).length;
-            countCities = count;
-            console.log(stateList);
+            let data_JSON = JSON.parse(data);
+            estado.totalCities = data_JSON.length;
           })
           .catch((err) => {
             res.status(400).send({ err: err.message });
           });
       });
-      console.log(stateList);
     })
     .catch((err) => {
       res.status(400).send({ err: err.message });
+    })
+    .finally(() => {
+      console.log(estados);
+      res.send({ estados: estados });
     });
-
-  // ordena a lista do maior ao menor
-  stateList = stateList.sort((a, b) => {
-    return b - a;
-  });
-  // filtra so os 5 primeiros
-  // stateList = stateList.filter((state) => {
-  //   return state.countCities < stateList[4].countCities;
-  // });
-
-  // res.send(stateList);
 });
 
 app.listen(port, async () => {
