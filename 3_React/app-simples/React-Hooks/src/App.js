@@ -1,8 +1,34 @@
-import React, { Component } from 'react';
-import ProjetoBase from './components/ProjetoBase/ProjetoBase';
+import React, { useState, useEffect } from 'react';
 
-export default class App extends Component {
-  render() {
-    return <ProjetoBase />;
-  }
+import { getTimeStamp } from './helpers/dateTimeHelper';
+
+export default function App() {
+  const [clickArray, setClickArray] = useState([]);
+
+  useEffect(() => {
+    document.title = clickArray.length.toString();
+  });
+
+  const handleClick = () => {
+    const newClickArray = Object.assign([], clickArray);
+    newClickArray.push(getTimeStamp());
+
+    setClickArray(newClickArray);
+  };
+
+  return (
+    <div>
+      <h1>
+        React com <strong>Hooks</strong>
+      </h1>
+
+      <button onClick={handleClick}>Clique aqui</button>
+
+      <ul>
+        {clickArray.map((item) => {
+          return <li key={item}>{item}</li>;
+        })}
+      </ul>
+    </div>
+  );
 }
