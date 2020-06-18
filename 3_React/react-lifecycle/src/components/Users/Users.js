@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import User from '../User/User';
 
 export default class Users extends Component {
   constructor() {
@@ -30,10 +31,16 @@ export default class Users extends Component {
       <Fragment>
         <h3>Users</h3>
         <p>Componente visível a {visibleTime} segundos</p>
-        {users.map((user) => {
-          const { login, name, picture } = user;
-          return <p key={login.uuid}>{name.first}</p>;
-        })}
+        <ul>
+          {users.map((user) => {
+            const { login } = user;
+            return (
+              <li key={login.uuid}>
+                <User userContent={user} />
+              </li>
+            );
+          })}
+        </ul>
       </Fragment>
     );
   }

@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import Users from './components/Users/Users';
+import Toggle from './components/Toggle/Toggle';
 
 export default class App extends Component {
   constructor() {
@@ -8,6 +9,7 @@ export default class App extends Component {
       users: [],
       showUsers: false,
     };
+    this.handleShowUsers = this.handleShowUsers.bind(this);
   }
   async componentDidMount() {
     console.log('Mounted');
@@ -31,10 +33,8 @@ export default class App extends Component {
   }
 
   handleShowUsers() {
-    const { showUsers } = this.state;
-
     this.setState({
-      showUsers: !showUsers,
+      showUsers: !this.state.showUsers,
     });
   }
 
@@ -42,15 +42,13 @@ export default class App extends Component {
     const { showUsers, users } = this.state;
     return (
       <Fragment>
-        <div className="switch">
-          <label>
-            Show users
-            <input type="checkbox" onChange={() => this.handleShowUsers()} />
-            <span className="lever"></span>
-          </label>
-        </div>
+        <Toggle
+          description="Show users"
+          enabled={showUsers}
+          onToggle={this.handleShowUsers}
+        />        
         <hr />
-        {showUsers && <Users users={users}/>}
+        {showUsers && <Users users={users} />}
       </Fragment>
     );
   }
