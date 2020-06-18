@@ -1,5 +1,6 @@
 .counterContainer {
   padding: 10px;
+  display: flex;
 }
 
 .counterValue {

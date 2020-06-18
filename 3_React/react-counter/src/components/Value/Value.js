@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import css from '../Counter/counter.module.css';
+import css from '../Counters/counter.module.css';
 
 export default class Value extends Component {
   render() {
