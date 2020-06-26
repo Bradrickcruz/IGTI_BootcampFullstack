@@ -1,0 +1,10 @@
+.counterContainer {
+  padding: 10px;
+  display: flex;
+}
+
+.counterValue {
+  padding: 10px;
+  font-size: 1.2rem;
+  font-family: Consolas, monospace;
+}
