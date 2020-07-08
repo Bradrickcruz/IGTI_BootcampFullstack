@@ -1,4 +1,4 @@
 recursos/
 node_modules
-account.json
 *.log
+*.env
