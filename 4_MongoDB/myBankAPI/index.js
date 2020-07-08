@@ -1,6 +1,9 @@
 import express from 'express';
 import { accountRouter } from './Routes/accountsRouter.js';
 import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 mongoose.set('useFindAndModify', false);
 
@@ -9,9 +12,9 @@ const PORT = 3000;
 
 (async () => {
   try {
-    const configDB = { pwd: 'rick', dbDefault: 'myBankAPI' };
-    const uri = `mongodb+srv://rick:${configDB.pwd}@ricktest.ncqqs.gcp.mongodb.net/${configDB.dbDefault}?retryWrites=true&w=majority`;
-    await mongoose.connect(uri, {
+    // const configDB = { pwd: 'rick', dbDefault: 'myBankAPI' };
+    // const uri = `mongodb+srv://rick:${configDB.pwd}@ricktest.ncqqs.gcp.mongodb.net/${configDB.dbDefault}?retryWrites=true&w=majority`;
+    await mongoose.connect(process.env.URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
